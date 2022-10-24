@@ -5,3 +5,5 @@ alias clea "clear"
 alias r "clear"
 
 neofetch | lolcat
+
+export vim=nvim

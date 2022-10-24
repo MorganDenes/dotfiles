@@ -1,0 +1,22 @@
+
+
+TODO:
+Add ability to bump nvim version and rebuild
+Add way to pull live neovim configuration back into repo
+Add readme
+
+
+COMPLETE:
+Add neovim config and build
+install fish
+
+
+
+
+
+
+
+
+
+
+
