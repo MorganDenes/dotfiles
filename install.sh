@@ -28,7 +28,7 @@ if ! [ -x "$(command -v nvim)" ]; then
     fi
     echo "dotfile: Installing nvim"
     sudo make install
-    nvim -c 'PlugInstall' -c 'qa!'
+    nvim +PlugInstall +qa
 fi
 
 cd $tempdir
