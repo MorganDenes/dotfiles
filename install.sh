@@ -39,5 +39,5 @@ echo "dotfile: Copy config.fish to .config/fish/"
 cp ./config.fish ~/.config/fish/
 
 echo "dotfile: Set fish as default shell"
-sudo chsh -s "$(which fish)"
+sudo chsh -s "$(which fish)" $USER
 
