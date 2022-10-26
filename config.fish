@@ -3,7 +3,4 @@ alias push "git push"
 alias lear "clear"
 alias clea "clear"
 alias r "clear"
-
-neofetch | lolcat
-
-export vim=nvim
+alias vim "nvim"
