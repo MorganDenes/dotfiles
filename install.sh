@@ -7,7 +7,7 @@ tempdir="$(pwd)"
 
 sudo apt-get update
 sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf \
-    automake cmake g++ pkg-config unzip curl doxygen fish
+    automake cmake g++ pkg-config unzip curl doxygen fish tmux
 
 if ! [ -x "$(command -v nvim)" ]; then
     if [ -f "$HOME/development/neovim/Makefile" ]; then
