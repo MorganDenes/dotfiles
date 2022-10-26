@@ -122,7 +122,7 @@ nmap('<C-h>', '<C-w>j')
 nmap('<C-t>', '<C-w>k')
 nmap('<C-s>', '<C-w>l')
 
-nmap('<leader>e', ':NvimTreeToggle<cr>')
+nmap('<leader>e', ':NvimTreeFocus<cr>')
 nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>dbs', ':so ~/.config/nvim/init.lua<CR>')
 
