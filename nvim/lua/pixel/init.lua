@@ -1,5 +1,6 @@
 require('pixel/cursorline').setup()
 
+-- <leader>f
 require('pixel/telescope')
 require('pixel/lightline')
 require('pixel/nvim-tree')

@@ -45,12 +45,12 @@ Plug 'puremourning/vimspector'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
 
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make' }
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-fugitive'
@@ -128,7 +128,6 @@ nmap('<C-t>', '<C-w>k')
 nmap('<C-s>', '<C-w>l')
 
 nmap('<leader>e', ':NvimTreeFocus<cr>')
-nmap('<leader>ff', '<cmd>Telescope find_files<cr>')
 nmap('<leader>dbs', ':so ~/.config/nvim/init.lua<CR>')
 
 
