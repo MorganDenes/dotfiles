@@ -87,7 +87,12 @@ let g:ale_sign_style_warning='·'
 
 let g:ale_linters = { 'cs' : ['OmniSharp']}
 
-set langmap='h,hj,tk,sl,jt,ks,"H,HJ,TK,SL,JT,KS
+function! SetEngram()
+    set langmap='h,hj,tk,sl,jt,ks,"H,HJ,TK,SL,JT,KS
+endfunction
+
+function! SetQwerty()
+endfunction
 ]])
 
 

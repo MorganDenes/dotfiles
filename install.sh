@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # TODO:
 # Add ability to bump nvim version and rebuild
@@ -7,7 +8,7 @@ tempdir="$(pwd)"
 
 sudo apt-get update
 sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf \
-    automake cmake g++ pkg-config unzip curl doxygen fish tmux
+    automake cmake g++ pkg-config unzip curl doxygen fish tmux fzf tree
 
 if ! [ -x "$(command -v nvim)" ]; then
     if [ -f "$HOME/development/neovim/Makefile" ]; then
@@ -34,11 +35,7 @@ fi
 
 cd $tempdir
 
-echo "dotfile: Coping nvim config"
-cp -dr nvim/ ~/.config/nvim
-
-echo "dotfile: Copy config.fish to .config/fish/"
-cp ./config.fish ~/.config/fish/
+sh copy_config.sh
 
 echo "dotfile: Set fish as default shell"
 sudo chsh -s "$(which fish)" $USER
