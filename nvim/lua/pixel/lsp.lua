@@ -1,13 +1,26 @@
-local nvim_lsp = require('lspconfig')
-local servers = { }
 
-local on_attach = funcion(client, bufnr)
-    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local opts = { noremap=true, silent=true }
-
-    buf_set_keymap('n', 'gD', '')
+local set = vim.keymap.set
+local on_attach = function(client, bufnr)
+    bufopts = {noremap = true, silent = true, buffer = bufnr}
+    set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    set('n', 'gh', vim.lsp.buf.hover, bufopts)
+    set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
+    set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
+    -- set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    -- set('i', '<C-Space>', vim.lsp.buf.completion, bufopts)
+    set('n', '<leader>rn', "<cmd>Lspsaga rename ++project<CR>", bufopts)
 end
 
+require'lspsaga'.setup({
+    ui = {
+        border = 'double'
+    }
+})
 
-
+require 'lspconfig'.fsautocomplete.setup{
+    cmd= { "fsautocomplete", "--adaptive-lsp-server-enabled"  },
+    on_attach = on_attach,
+    -- on_attach=require'completion'.on_attach,
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+}
 

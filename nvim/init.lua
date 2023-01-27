@@ -27,9 +27,10 @@ set.softtabstop = 4
 set.showmatch = true
 set.signcolumn = 'yes'
 set.expandtab = true
-set.wildmode = ''
+set.wildmode = 'list:lastused'
 set.splitbelow = true
 set.undodir = '~/.vim/undodir'
+set.completeopt = 'menu,menuone,noselect'
 
 let.mapleader = " "
 
@@ -41,6 +42,17 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'puremourning/vimspector'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'onsails/lspkind.nvim'
+Plug 'glepnir/lspsaga.nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'nickspoons/vim-sharpenup'
@@ -54,9 +66,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-fugitive'
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'shatur/neovim-session-manager'
 
 Plug 'kyazdani42/nvim-web-devicons'
@@ -74,6 +83,9 @@ vim.cmd([[
 filetype plugin indent on
 syntax on
 colorscheme solarized
+
+autocmd BufNewFile,BufRead *.fs,*.fsx,*.fsi set filetype=fsharp
+
 ]])
 
 require('pixel/init')
@@ -85,7 +97,12 @@ let g:ale_sign_info='·'
 let g:ale_sign_style_error='·'
 let g:ale_sign_style_warning='·'
 
-let g:ale_linters = { 'cs' : ['OmniSharp']}
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+" let g:ale_lint_on_enter = 1
+let g:ale_completion_enabled = 1
+
+let g:ale_linters = { 'cs' : ['OmniSharp'], 'fsharp' : ['fsautocomplete']}
 
 function! SetEngram()
     set langmap='h,hj,tk,sl,jt,ks,"H,HJ,TK,SL,JT,KS
