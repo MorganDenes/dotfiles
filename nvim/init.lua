@@ -144,8 +144,9 @@ nmap('<C-h>', '<C-w>j')
 nmap('<C-t>', '<C-w>k')
 nmap('<C-s>', '<C-w>l')
 
-nmap('<leader>e', ':NvimTreeFocus<cr>')
-nmap('<leader>dbs', ':so ~/.config/nvim/init.lua<CR>')
+nmap('<leader>e', '<cmd>NvimTreeFocus<cr>')
+nmap('<leader>dbs', '<cmd>so ~/.config/nvim/init.lua<CR>')
+nmap('<leader>g', '<cmd>tab Git<CR>')
 
 
 

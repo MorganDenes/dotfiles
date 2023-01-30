@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo apt-get install -y fish
+
+if ! [ -x "$(command -v fsautocomplete)" ]; then
+    sh fsharp.sh
+fi
+
+sh copy_config.sh
+
