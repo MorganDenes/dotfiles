@@ -44,6 +44,7 @@ Plug 'rcarriga/nvim-dap-ui'
 Plug 'puremourning/vimspector'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 Plug 'onsails/lspkind.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
