@@ -4,19 +4,21 @@ vim.g.lightline = {
     active = {
         left = {
             { 'mode', 'past'},
-            { 'filename', 'modified' }
+            { 'gitbranch' },
+            { 'relativepath', 'modified' }
         },
         right = {
-            {'lineinfo'}, {'percent'},
+            {'lineinfo'},
+            {'percent'},
             {'fileformat', 'fileencoding', 'filetype'}
         }
+    },
+    component_function = {
+        gitbranch = 'FugitiveHead',
+        sharpenup = 'sharpenup#statusline#Build'
+    },
+    component_expand = {
+        linter_checking = 'lightline#ale#checking'
     }
-    -- component_function = {
-        -- gitbranch = 'fugitive#head'
-        -- sharpenup = 'sharpenup#statusline#Build'
-    -- }
-    --component_expand = {
-    --    linter_checking = 'lightline#ale#checking'
-    --}
 }
 

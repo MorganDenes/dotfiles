@@ -37,6 +37,8 @@ let.mapleader = " "
 vim.cmd([[
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+Plug 'vimwiki/vimwiki'
+
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'mfussenegger/nvim-dap'

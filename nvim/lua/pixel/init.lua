@@ -12,6 +12,7 @@ require('pixel/nvim-cmp')
 require('pixel/lsp')
 require('pixel/lsp-lines')
 require('pixel/lspsaga')
+require('pixel/vimwiki')
 -- require('pixel/sessions')
 -- require('autocompletion.lua')
 

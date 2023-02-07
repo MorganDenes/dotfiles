@@ -8,14 +8,14 @@ local on_attach = function(client, bufnr)
     set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
     -- set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     -- set('i', '<C-Space>', vim.lsp.buf.completion, bufopts)
-    set('n', '<leader>rn', "<cmd>Lspsaga rename ++project<CR>", bufopts)
+    -- set('n', '<leader>rn', "<cmd>Lspsaga rename ++project<CR>", bufopts)
 end
 
-require'lspsaga'.setup({
-    ui = {
-        border = 'double'
-    }
-})
+-- require'lspsaga'.setup({
+    -- ui = {
+        -- border = 'double'
+    -- }
+-- })
 
 require 'lspconfig'.fsautocomplete.setup{
     cmd= { "fsautocomplete", "--adaptive-lsp-server-enabled"  },

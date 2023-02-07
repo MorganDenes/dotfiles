@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# TODO:
+# TODO:instinst
 # Add ability to bump nvim version and rebuild
 
 echo "dotfile: Begin"
 tempdir="$(pwd)"
 
 sudo apt-get update
-sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf \
-    automake cmake g++ pkg-config unzip curl doxygen fish tmux fzf tree \
-    ripgrep
+sh ./install_dependencies.sh
 
 if ! [ -x "$(command -v nvim)" ]; then
     if [ -f "$HOME/development/neovim/Makefile" ]; then
@@ -34,10 +32,10 @@ if ! [ -x "$(command -v nvim)" ]; then
     nvim --headless +PlugInstall +qa
 fi
 
-cd $tempdir
+cd "$tempdir" || exit
 
 sh copy_config.sh
 
 echo "dotfile: Set fish as default shell"
-sudo chsh -s "$(which fish)" $USER
+sudo chsh -s "$(which fish)" "$USER"
 
