@@ -6,9 +6,11 @@ local on_attach = function(client, bufnr)
     set('n', 'gh', vim.lsp.buf.hover, bufopts)
     set('n', '<leader>gi', vim.lsp.buf.implementation, bufopts)
     set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
-    -- set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-    -- set('i', '<C-Space>', vim.lsp.buf.completion, bufopts)
-    -- set('n', '<leader>rn', "<cmd>Lspsaga rename ++project<CR>", bufopts)
+    set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    set('v', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+    set('i', '<C-Space>', vim.lsp.buf.completion, bufopts)
+    -- set('n', '<leader>rn', "<cmd>Lspsaga rename<CR>", bufopts)
 end
 
 -- require'lspsaga'.setup({
