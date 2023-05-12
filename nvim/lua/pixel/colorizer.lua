@@ -1,5 +1,0 @@
-
-require'colorizer'.setup({
-    'fsharp'
-})
-

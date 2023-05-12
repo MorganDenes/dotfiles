@@ -20,7 +20,7 @@ set tabstop=2 softtabstop=2 expandtab
 set undodir=~/.vim./undodir undofile
 set wildmode
 
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')  
 
 Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/asyncomplete.vim'

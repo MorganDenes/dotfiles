@@ -6,7 +6,7 @@ local au = a.nvim_create_autocmd
 local hl = a.nvim_set_hl
 local fn = vim.fn
 
-function matchadd()
+local function matchadd()
     local column = a.nvim_win_get_cursor(0)[2]
     local line = a.nvim_get_current_line()
     local cursorword = fn.matchstr(line:sub(1, column + 1), [[\k*$]])
@@ -32,6 +32,13 @@ function matchadd()
 end
 
 function M.setup()
+    local set = vim.opt
+    set.wrap = false
+    set.number = true
+    set.relativenumber = true
+    set.numberwidth = 4
+    set.scrolloff = 12
+
     vim.wo.cursorline = true
     vim.wo.cursorcolumn = true
     au("WinEnter", {
@@ -61,3 +68,4 @@ function M.setup()
 end
 
 return M
+

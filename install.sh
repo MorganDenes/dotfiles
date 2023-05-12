@@ -6,7 +6,6 @@
 echo "dotfile: Begin"
 tempdir="$(pwd)"
 
-sudo apt-get update
 sh ./install_dependencies.sh
 
 if ! [ -x "$(command -v nvim)" ]; then
@@ -29,7 +28,7 @@ if ! [ -x "$(command -v nvim)" ]; then
 
     echo "dotfile: Installing nvim"
     sudo make install
-    nvim --headless +PlugInstall +qa
+    nvim --headless "+Lazy! sync" +qa
 fi
 
 cd "$tempdir" || exit

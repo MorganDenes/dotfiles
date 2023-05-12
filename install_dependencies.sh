@@ -1,6 +1,24 @@
 #!/bin/bash
 
-sudo apt-get install -y ninja-build gettext libtool libtool-bin autoconf \
-    automake cmake g++ pkg-config unzip curl doxygen fish tmux fzf tree \
-    ripgrep
+sudo apt-get update
+sudo apt-get install -y \
+    ninja-build \
+    gettext \
+    libtool \
+    libtool-bin \
+    autoconf \
+    automake \
+    cmake \
+    dnsutil \
+    g++ \
+    pkg-config \
+    unzip \
+    curl \
+    doxygen \
+    fish \
+    tmux \
+    fzf \
+    ripgrep \
+    net-tools \
+    traceroute
 
