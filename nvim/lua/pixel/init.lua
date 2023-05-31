@@ -11,5 +11,4 @@ require('pixel/complete').setup()
 -- require('pixel/lsp-lines')
 -- require('pixel/lspsaga')
 -- require('pixel/sessions')
--- require('autocompletion.lua')
 

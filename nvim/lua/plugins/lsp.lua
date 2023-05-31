@@ -49,6 +49,7 @@ return {
                 on_attach = on_attach,
             }
 
+            -- C# --
             lsp.omnisharp.setup{
               cmd = { "omnisharp" },
               on_attach = on_attach,
@@ -62,10 +63,17 @@ return {
               -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
             }
 
+            -- Clojure --
+            lsp.clojure_lsp.setup{
+              filetypes = {'clojure','clj','edn'},
+              on_attach = on_attach,
+            }
+
             -- Vue Javascript Json TypeScript --
             lsp.volar.setup{
               -- Take over mode
               filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
+              on_attach = on_attach,
             }
         end,
     },
