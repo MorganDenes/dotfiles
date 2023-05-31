@@ -65,7 +65,6 @@ return {
 
             -- Clojure --
             lsp.clojure_lsp.setup{
-              filetypes = {'clojure','clj','edn'},
               on_attach = on_attach,
             }
 

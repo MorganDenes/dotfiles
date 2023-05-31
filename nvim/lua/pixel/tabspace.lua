@@ -39,7 +39,7 @@ function M.setup()
   })
   vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     pattern = {'*.json','*.css','*.html','*.vue', '*.lua'},
-   group = augroup,
+    group = augroup,
     callback = function()
       set.smartindent = true
       set.autoindent = true

@@ -13,10 +13,9 @@ return {
             'neovim/nvim-lspconfig',
         },
         opts = {
-            -- volar not set to autoload because not all images have npm installed
+            -- volar and fsautocomplete not set to autoload because not all images have npm or dotnet installed
             ensure_installed = {
                 'lua_ls',
-                'fsautocomplete',
                 'omnisharp',
             },
         },
