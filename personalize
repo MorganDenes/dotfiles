@@ -2,9 +2,9 @@
 
 sudo apt-get install -y fish
 
-if ! [ -x "$(command -v fsautocomplete)" ]; then
-    sh fsharp.sh
-fi
+# if ! [ -x "$(command -v fsautocomplete)" ]; then
+    # sh fsharp.sh
+# fi
 
-sh copy_config.sh
+# sh copy_config.sh
 
