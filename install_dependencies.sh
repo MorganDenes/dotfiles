@@ -9,7 +9,6 @@ sudo apt-get install -y \
     autoconf \
     automake \
     cmake \
-    dnsutil \
     g++ \
     pkg-config \
     unzip \
@@ -18,7 +17,8 @@ sudo apt-get install -y \
     fish \
     tmux \
     fzf \
-    ripgrep \
-    net-tools \
-    traceroute
+    ripgrep
 
+    # net-tools \
+    # traceroute
+    # dnsutil \
