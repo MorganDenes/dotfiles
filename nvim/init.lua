@@ -19,7 +19,7 @@ set.showmode = false
 set.ignorecase = true
 set.list = true
 set.wildmode = 'list:lastused'
-set.completeopt = 'menu,menuone,noselect'
+set.completeopt = 'menu,menuone'
 
 local function map(mode, lhs, rhs)
     mapset(mode, lhs, rhs, { noremap = true })
