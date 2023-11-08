@@ -15,6 +15,7 @@ return {
   config = function(_, _)
     local cmp = require('cmp')
     local opts = {
+      preselect = cmp.PreselectMode.None,
       snippet = {
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body)
