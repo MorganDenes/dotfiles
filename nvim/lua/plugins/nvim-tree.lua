@@ -3,7 +3,7 @@ return {
     {
         'nvim-tree/nvim-tree.lua',
         version="*",
-        lazy=false,
+        lazy=true,
         dependencies={
             'nvim-tree/nvim-web-devicons',
         },
@@ -13,9 +13,9 @@ return {
         },
         config = function(_, opts)
             require('nvim-tree').setup(opts)
-            vim.api.nvim_create_autocmd({ "VimEnter" }, {
-                callback = require("nvim-tree.api").tree.open
-            })
+            -- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+            --     callback = require("nvim-tree.api").tree.open
+            -- })
         end,
     },
 }

@@ -29,7 +29,12 @@ return {
                     override_file_sorter = true,
                     case_mode = 'ignore_case'
                 }
-            }
+            },
+            defaults = {
+              path_display = {
+                "shorten",
+              },
+            },
         },
         keys = {
             {"<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>"},

@@ -9,8 +9,6 @@ set.splitbelow = true
 set.swapfile = false
 set.undodir = '~/.vim/undodir'
 
---
-
 set.matchpairs:append("<:>")
 set.showmatch = true
 
@@ -18,7 +16,7 @@ set.hlsearch = false
 set.showmode = false
 set.ignorecase = true
 set.list = true
-set.wildmode = 'list:lastused'
+set.wildmode = 'list,full'
 set.completeopt = 'menu,menuone'
 
 local function map(mode, lhs, rhs)
