@@ -21,12 +21,12 @@ return {
           vim.fn["vsnip#anonymous"](args.body)
         end,
       },
-      formatting = {
-        format = require('lspkind').cmp_format({
-          mode = 'symbol_text',
-          before = function (_, vim_item) return vim_item end,
-        })
-      },
+      -- formatting = {
+      --   format = require('lspkind').cmp_format({
+      --     mode = 'symbol_text',
+      --     before = function (_, vim_item) return vim_item end,
+      --   })
+      -- },
       mapping = {
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

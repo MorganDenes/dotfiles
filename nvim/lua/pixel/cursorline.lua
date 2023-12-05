@@ -60,11 +60,11 @@ function M.setup()
             matchadd()
         end
     })
-    au({ "CursorMoved", "CursorMovedI" }, {
-        callback = function()
-            matchadd()
-        end
-    })
+    -- au({ "CursorMoved" }, {
+    --     callback = function()
+    --         matchadd()
+    --     end
+    -- })
 end
 
 return M
