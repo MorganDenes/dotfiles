@@ -17,8 +17,8 @@ function M.setup()
     pattern = {'*.fs','*.txt'},
     group = augroup,
     callback = function()
-      set.smartindent = false
-      set.autoindent = false
+      set.smartindent = true
+      set.autoindent = true
       set.shiftwidth = 4
       set.tabstop = 4
       set.softtabstop = 4
