@@ -32,7 +32,7 @@ local function imap(lhs, rhs)
 end
 
 function SetEngram()
-    set.langmap="'h,hj,tk,sl,jt,ks,\"H,HJ,TK,SL,JT,KS"
+    set.langmap="qh,hj,tk,sl,jt,ks,QH,HJ,TK,SL,JT,KS"
     -- TODO: Can't seem to target quote for commands
     -- nmap("<C-quote>", '<C-w>h')
     nmap('<C-h>', '<C-w>j')

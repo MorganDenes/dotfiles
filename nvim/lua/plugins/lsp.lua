@@ -32,7 +32,7 @@ return {
                 set("n","<leader>o", "<cmd>Lspsaga outline<CR>")
                 set({"n", "t"}, "<A-x>", "<cmd>Lspsaga term_toggle<CR>")
               else
-                set({'n', 'v'}, '<leader>ca', '<cmd>Lspsaga code_action<CR>', bufopts)
+                set({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, bufopts)
                 set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
                 -- set("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<CR>")
                 -- set("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
@@ -82,6 +82,9 @@ return {
               on_attach = on_attach,
               capabilities = capabilities,
             }
+
+            -- C/C++ --
+            lsp.clangd.setup{}
 
             -- Clojure --
             lsp.clojure_lsp.setup{
