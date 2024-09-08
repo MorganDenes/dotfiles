@@ -92,6 +92,9 @@ return {
               capabilities = capabilities,
             }
 
+            -- GDScript --
+            lsp.gdscript.setup{}
+
             -- Vue Javascript Json TypeScript --
             lsp.volar.setup{
               -- Take over mode
