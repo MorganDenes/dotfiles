@@ -41,8 +41,6 @@ function M.setup()
   local set = vim.opt
   set.colorcolumn = "80"
   set.signcolumn = 'yes'
-  set.background = "light"
-  vim.cmd([[colorscheme solarized]])
 end
 
 return M
