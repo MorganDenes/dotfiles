@@ -15,6 +15,8 @@ return {
       filetype = 'fsharp',
     }
     require("nvim-treesitter.configs").setup{
+      highlight = { enable = true },
+      -- indent = { enable = true },
       ensure_installed  = {
         'bash',
         'c_sharp',

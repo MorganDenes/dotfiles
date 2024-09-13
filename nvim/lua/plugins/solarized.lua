@@ -1,5 +1,6 @@
 return {
   'maxmx03/solarized.nvim',
+  lazy = false,
   opts = {
     styles = {
       comments = { italic = true },

@@ -3,6 +3,9 @@
 # echo "dotfile: Coping nvim config"
 cp -drf nvim/ ~/.config/
 
+# echo "dotfile: Coping queries config"
+cp -drf treesitter/queries/* ~/.local/share/nvim/lazy/nvim-treesitter/queries/
+
 # echo "dotfile: Copy config.fish to .config/fish/"
 cp -f ./config.fish ~/.config/fish/
 
