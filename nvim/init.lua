@@ -33,7 +33,6 @@ end
 
 function SetEngram()
     set.langmap="qh,hj,tk,sl,jt,ks,QH,HJ,TK,SL,JT,KS,lq,LQ"
-    -- TODO: Can't seem to target quote for commands
     nmap("<C-q>", '<C-w>h')
     nmap('<C-h>', '<C-w>j')
     nmap('<C-t>', '<C-w>k')

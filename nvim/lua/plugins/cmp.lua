@@ -9,8 +9,6 @@ return {
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-vsnip',
-    'hrsh7th/vim-vsnip',
   },
   config = function(_, _)
     local cmp = require('cmp')
@@ -18,7 +16,7 @@ return {
       preselect = cmp.PreselectMode.None,
       snippet = {
         expand = function(args)
-          vim.fn["vsnip#anonymous"](args.body)
+          vim.snippet.expand(args.body)
         end,
       },
       -- formatting = {
@@ -49,8 +47,7 @@ return {
         -- ['<CR>'] = cmp.mapping.confirm({ select = true  }),
       },
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' }
+        { name = 'nvim_lsp' }
       }, {
         name = 'buffer'
       })

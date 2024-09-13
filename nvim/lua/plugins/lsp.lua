@@ -78,7 +78,7 @@ return {
 
             -- F# --
             lsp.fsautocomplete.setup{
-              cmd= { "fsautocomplete", "--adaptive-lsp-server-enabled"  },
+              cmd = { "fsautocomplete", "--adaptive-lsp-server-enabled" },
               on_attach = on_attach,
               capabilities = capabilities,
             }
