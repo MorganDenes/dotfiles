@@ -7,18 +7,28 @@ function M.lsp()
     pattern = '*',
     group = augroup,
     callback = function()
-      vim.fn.sign_define('DiagnosticSignError', {text='•', texthl='DiagnosticSignError'})
+      vim.diagnostic.config({
+        virtual_text = true,
+        severity_sort = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '•',
+            [vim.diagnostic.severity.WARN] = '•',
+            [vim.diagnostic.severity.INFO] = '·',
+            [vim.diagnostic.severity.HINT] = '·',
+          },
+        },
+      })
+
       vim.api.nvim_set_hl(0, 'DiagnosticSignError', {ctermfg='red',ctermbg='lightgrey'})
-
-      vim.fn.sign_define('DiagnosticSignWarn', {text='•', texthl='DiagnosticSignWarn'})
       vim.api.nvim_set_hl(0, 'DiagnosticSignWarn', {ctermfg='darkyellow',ctermbg='lightgrey'})
-
-      vim.fn.sign_define('DiagnosticSignInfo', {text='·', texthl='DiagnosticSignInfo'})
       vim.api.nvim_set_hl(0, 'DiagnosticSignInfo', {ctermfg='darkblue',ctermbg='lightgrey'})
-
-      vim.fn.sign_define('DiagnosticSignHint', {text='·', texthl='DiagnosticSignHint'})
       vim.api.nvim_set_hl(0, 'DiagnosticHint', {ctermfg='darkblue',ctermbg='white'})
       vim.api.nvim_set_hl(0, 'DiagnosticSignHint', {ctermfg='darkblue',ctermbg='lightgrey'})
+
+      vim.keymap.set("n", "<leader>dv", function()
+        vim.diagnostic.config({ virtual_lines = not vim.diagnostic.config().virtual_lines })
+      end, { desc = "Toggle diagnostics virtual text" })
     end
   })
 end

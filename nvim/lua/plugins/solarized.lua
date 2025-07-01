@@ -12,7 +12,7 @@ return {
     variant = 'spring',
   },
   config = function(_, opts)
-    -- vim.o.termguicolors = true
+    vim.o.termguicolors = true
     vim.cmd.colorscheme 'vim'
     vim.o.background = 'light'
     require('solarized').setup(opts)
