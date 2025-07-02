@@ -17,7 +17,9 @@ sudo apt-get install -y \
     fish \
     tmux \
     fzf \
-    ripgrep
+    ripgrep \
+    less \
+    zip
 
     # net-tools \
     # traceroute

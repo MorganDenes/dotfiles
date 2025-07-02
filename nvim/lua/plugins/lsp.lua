@@ -53,7 +53,8 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             -- LUA --
-            lsp.lua_ls.setup{
+            vim.lsp.enable('lua_ls')
+            vim.lsp.config('lua_ls', {
               settings = {
                 Lua = {
                   -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
@@ -67,14 +68,14 @@ return {
               },
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
 
             -- C# --
-            lsp.omnisharp.setup{
-              cmd = { "omnisharp" },
+            vim.lsp.enable('omnisharp')
+            vim.lsp.config('omnisharp', {
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
 
             -- F# --
             lsp.fsautocomplete.setup{
