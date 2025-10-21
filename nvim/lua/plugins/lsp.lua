@@ -49,7 +49,6 @@ return {
             --     }
             -- })
 
-            local lsp = vim.lsp.config
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             -- LUA --
@@ -78,34 +77,34 @@ return {
             })
 
             -- F# --
-            lsp.fsautocomplete.setup{
+            vim.lsp.config('fsautocomplete', {
               cmd = { "fsautocomplete", "--adaptive-lsp-server-enabled" },
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
 
             -- C/C++ --
-            lsp.clangd.setup{}
+            vim.lsp.config("clangd", {})
 
             -- Clojure --
-            lsp.clojure_lsp.setup{
+            vim.lsp.config('clojure_lsp', {
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
 
             -- GDScript --
-            lsp.gdscript.setup{}
+            vim.lsp.config('gdscript', {})
 
             -- Vue Javascript Json TypeScript --
-            lsp.volar.setup{
+            vim.lsp.config('volar', {
               -- Take over mode
               filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'},
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
 
             -- English --
-            require'lspconfig'.ltex.setup{
+            vim.lsp.config('ltex', {
               ltex = { language = "en-US" },
               filetypes = {
                 "gitcommit",
@@ -117,7 +116,7 @@ return {
               },
               on_attach = on_attach,
               capabilities = capabilities,
-            }
+            })
         end,
     },
 }
