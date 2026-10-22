@@ -26,6 +26,18 @@ function M.setup()
     end
   })
   vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = {'*.gd'},
+    group = augroup,
+    callback = function()
+      set.smartindent = true
+      set.autoindent = true
+      set.shiftwidth = 4
+      set.tabstop = 4
+      set.softtabstop = 4
+      set.expandtab = true
+    end
+  })
+  vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
     pattern = {'*.sh','*.cs','*.c','*.cpp','*.h','*.ps1'},
     group = augroup,
     callback = function()
