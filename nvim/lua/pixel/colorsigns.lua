@@ -14,6 +14,7 @@ function M.lsp()
       vim.api.nvim_set_hl(0, 'DiagnosticSignHint', {ctermfg='darkblue',ctermbg='lightgrey'})
 
       vim.diagnostic.config({
+        virtual_lines = false,
         virtual_text = true,
         severity_sort = true,
         signs = {
