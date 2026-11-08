@@ -15,11 +15,11 @@ return {
     ---------------
     {
         'nvim-telescope/telescope.nvim',
-        tag = "0.1.8",
+        tag = "v0.2.2",
         lazy = false,
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope-fzf-native.nvim',
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         },
         opts = {
             extensions = {
@@ -36,18 +36,17 @@ return {
               },
             },
         },
-        keys = {
-            {"<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>"},
-            {"<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>"},
-            {"<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>"},
-            {"<leader>fs", "<cmd>lua require('telescope.builtin').grep_string()<cr>"},
-            {"<leader>fh", "<cmd>lua require('telescope.builtin').search_history()<cr>"},
-            {"<leader>fr", "<cmd>lua require('telescope.builtin').resume()<cr>"},
-        },
         config = function(_, opts)
             local telescope = require('telescope')
             telescope.load_extension('fzf')
             require("telescope").setup(opts)
+            local builtin = require('telescope.builtin')
+            vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+            vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+            vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+            vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+            vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = 'Telescope resume' })
+            vim.keymap.set('n', '<leader>fs', builtin.grep_string, { desc = 'Telescope grep string' })
         end,
     }
 }

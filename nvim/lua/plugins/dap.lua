@@ -20,8 +20,6 @@ return {
 
     -- C# F# --
 
-    require('dap.ext.vscode').load_launchjs(nil, { coreclr = {'cs', 'fs', 'fsharp'} })
-
     dap.adapters.coreclr = {
       type = 'executable',
       command = 'netcoredbg',
